@@ -1,26 +1,36 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-gray-900">
+      <Navbar />
+
+      <main>
+        <Hero />
+        <Projects />
+
+        <section className="py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="rounded-3xl p-10 bg-gradient-to-br from-indigo-50 to-fuchsia-50 border">
+              <h3 className="text-2xl font-bold">About Me</h3>
+              <p className="mt-2 text-gray-700 max-w-3xl">
+                I’m a front-end developer focused on crafting intuitive, accessible interfaces. I love blending clean design, subtle motion, and real-world performance. When I’m not coding, you’ll find me exploring new tools, reading about product, or sketching UI ideas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <Contact />
+      </main>
+
+      <footer className="py-8 border-t">
+        <div className="mx-auto max-w-7xl px-6 text-sm text-gray-600">
+          © {new Date().getFullYear()} Your Name. All rights reserved.
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
